@@ -3,8 +3,8 @@
     <base-button
       @click="setSelectedTab('stored-resources')"
       :mode="storedResButtonMode"
-    >Stored Resources</base-button>
-    <base-button @click="setSelectedTab('add-resource')" :mode="addResButtonMode">Add Resource</base-button>
+    >Les pronostics</base-button>
+    <base-button @click="setSelectedTab('add-resource')" :mode="addResButtonMode">Ajouter un pronostic</base-button>
   </base-card>
   <keep-alive>
     <component :is="selectedTab"></component>
@@ -26,15 +26,15 @@ export default {
       storedResources: [
         {
           id: 'official-guide',
-          title: 'Official Guide',
-          description: 'The official Vue.js documentation.',
-          link: 'https://vuejs.org',
+          title: 'FC SÉVILLE - CELTA VIGO',
+          description: 'Côté sévillan, le latéral droit Navas a été rejoint à linfirmerie par la pépite Fernandes. En revanche, la recrue estivale Idrissi, lailier Suso, et le redoutable attaquant En-Nesyri, auteur dun doublé lors du dernier match de C1 contre Krasnodar, sont tous de retour. Très bon lan dernier, lancien Marseillais Ocampos a enfin débloqué son compteur avant la trêve en transformant un penalty. Le Celta Vigo est encore privé du gardien remplaçant Sergio Alvarez, du milieu international turc Mor et du défenseur pas encore utilisé cette saison Kevin Vasquez.Offensivement, le Celta Vigo sappuie énormément sur son attaquant expérimenté Iago Aspas qui a inscrit 4 des 6 buts marqués par son équipe depuis le début de la saison. Avantage FC Séville sur le papier',
+          cote: '1,70',
         },
         {
           id: 'google',
-          title: 'Google',
-          description: 'Learn to google...',
-          link: 'https://google.org',
+          title: 'MANCHESTER UNITED - WEST BROMWICH',
+          description: 'West Bromwich doit toujours faire sans le milieu remplaçant Field et lattaquant international gallois Robson-Kanu, blessés. De plus, quelques éléments positifs au covid dont le nom na pas filtré sont incertains. Avec 17 buts encaissés, le promu dispose de la plus mauvaise défense du championnat. Léquipe na trouvé le chemin des filets quà une seule reprise lors des 5 derniers matchs. Avantage Manchester United sur le papier',
+          cote: '2,2',
         },
       ],
     };
@@ -58,12 +58,12 @@ export default {
     setSelectedTab(tab) {
       this.selectedTab = tab;
     },
-    addResource(title, description, url) {
+    addResource(title, description, cote) {
       const newResource = {
         id: new Date().toISOString(),
         title: title,
         description: description,
-        link: url,
+        cote: cote,
       };
       this.storedResources.unshift(newResource);
       this.selectedTab = 'stored-resources';

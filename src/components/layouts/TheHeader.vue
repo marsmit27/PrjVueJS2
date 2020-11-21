@@ -2,12 +2,12 @@
   <header>
         <div class="header">
             <nav class="navigation">
-                
                 <a href="#" class="navbar-logo">Prono-max</a>
                 <div class="navbar-right">
-                    <a href="home.html">Accueil</a>
-                    <a href="contact.html">Connexion</a>
-                    <button class="btn-inscr">Inscription</button>
+                    <router-link to="/">Accueil</router-link>
+                    <router-link to="/contact">Contact</router-link>
+                    <router-link to="/connexion">Connexion</router-link>
+                    <router-link  to="/inscription">Inscription</router-link>
                 </div>
             </nav>
         </div>
@@ -15,13 +15,11 @@
 </template>
 
 
-
-
 <style scoped>
   header {
     width: 100%;
     height: 100px;
-    background-color: #F5D1CC;}
+    background-color: #1abc9c;}
 
 .navigation {
     padding-top: 30px;
@@ -36,12 +34,13 @@
 .navbar-right {
     float: right;
     padding-right: 5%;
+    padding-top: 12px;
 }
 
 .navbar-right a {
     text-decoration: none;
     padding: 30px;
-    color: black;
+    color: white;
     font-weight: 500;
     
 }

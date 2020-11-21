@@ -11,7 +11,7 @@
   <base-card>
     <form @submit.prevent="submitData">
       <div class="form-control">
-        <label for="title">Title</label>
+        <label for="title">Match</label>
         <input id="title" name="title" type="text" ref="titleInput" />
       </div>
       <div class="form-control">
@@ -19,8 +19,8 @@
         <textarea id="description" name="description" rows="3" ref="descInput"></textarea>
       </div>
       <div class="form-control">
-        <label for="link">Link</label>
-        <input id="link" name="link" type="url" ref="linkInput" />
+        <label for="cote">Cote</label>
+        <input id="cote" name="cote" type="text" ref="coteInput" />
       </div>
       <div>
         <base-button type="submit">Add Resource</base-button>
@@ -41,18 +41,18 @@ export default {
     submitData() {
       const enteredTitle = this.$refs.titleInput.value;
       const enteredDescription = this.$refs.descInput.value;
-      const enteredUrl = this.$refs.linkInput.value;
+      const enteredCote = this.$refs.coteInput.value;
 
       if (
         enteredTitle.trim() === '' ||
         enteredDescription.trim() === '' ||
-        enteredUrl.trim() === ''
+        enteredCote.trim() === ''
       ) {
         this.inputIsInvalid = true;
         return;
       }
 
-      this.addResource(enteredTitle, enteredDescription, enteredUrl);
+      this.addResource(enteredTitle, enteredDescription, enteredCote);
     },
     confirmError() {
       this.inputIsInvalid = false;

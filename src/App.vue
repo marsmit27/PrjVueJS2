@@ -1,6 +1,7 @@
 <template>
   <the-header title="RememberMe"></the-header>
-  <the-resources></the-resources>
+  <router-view></router-view>
+  <!-- <the-resources></the-resources> -->
 </template>
 
 <script>
